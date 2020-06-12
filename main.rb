@@ -1,4 +1,4 @@
-# File:  parasitic.rb
+# File:  main.rb
 #  Copyright (C) 2020 Daniel W. Crompton, Special Brands Holding <test12@specialbrands.net>
 
 #  This program is free software; you can redistribute it and/or modify
@@ -14,28 +14,19 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program; if not, write to the Free Software
 #  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ 
+require_relative "parasitic"
 
-class Parasitic
+file = File.open("Sample_InOut/Test12.in")
 
-  def initialize(num)
-    raise unless num.is_a?(Numeric)
-    @x = num
+file.each_line { |line|
+  n, k = line.split " "
+
+  if k != nil && n != nil
+    puts Parasitic.new(k.to_i).find(n.to_i)
+  else
+    puts
   end
+}
 
-  def find(y)
-    val = @x
-    for i in 1 .. 60
-      partial = val * y
-      npartial = val + partial.to_s.reverse[i-1].to_i * (10 ** i)
-      if partial == (val.to_s.reverse[0] + val.to_s.reverse[1..].reverse).to_i
-        break
-      end
-      val = npartial
-      if i == 60 
-        val = 0
-      end
-    end
-    val
-  end
-end
-
+file.close

@@ -1,5 +1,5 @@
 # File:  parasitic_test.rb
-#  Copyright (C) 2020 Daniel W. Crompton, Special Brands Holding <test10@specialbrands.net>
+#  Copyright (C) 2020 Daniel W. Crompton, Special Brands Holding <test12@specialbrands.net>
 
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
